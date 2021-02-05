@@ -13,17 +13,7 @@ const Posts = () => {
   return (
     <main>
       {posts.length > 0 &&
-        posts.map(post => (
-          <Article
-            author={post.author}
-            content={post.content}
-            date={post.date}
-            id={post.id}
-            image={post.image}
-            title={post.title}
-            key={post.id}
-          />
-        ))}
+        posts.map(post => <Article {...post} key={post.id} />)}
     </main>
   );
 };
