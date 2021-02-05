@@ -1,5 +1,5 @@
 export interface IThumbnail {
-  image: string;
+  url: string;
   caption?: string;
 }
 
@@ -7,7 +7,7 @@ export interface IArticle {
   id: string;
   title: string;
   author: string;
-  thumbnail: IThumbnail;
+  image: IThumbnail;
   date: string;
   content: string;
 }
