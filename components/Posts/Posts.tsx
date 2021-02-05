@@ -7,9 +7,8 @@ const Posts = () => {
   const [posts, setPosts] = useState<IArticle[] | []>([]);
 
   useEffect(() => {
-    // setPosts(getPosts());
     getPosts(setPosts);
-  });
+  }, []);
 
   return (
     <main>

@@ -1,16 +1,12 @@
-import posts from "../../../api/posts.json";
-
 const getPosts = callback => {
-  fetch("/api/posts.json")
+  fetch(
+    "https://raw.githubusercontent.com/DouglasdeMoura/exemplo-custom-hook/master/api/posts.json"
+  )
     .then(response => response.json())
     .then(result => {
-      console.log("cheguei aqui");
-      callback(posts);
-      console.log("resyut", result);
+      callback(result);
     })
-    .catch(error => {
-      throw new Error(error);
-    });
+    .catch(error => console.error(error));
 };
 
 export default getPosts;
