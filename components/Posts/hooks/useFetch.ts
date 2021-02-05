@@ -1,5 +1,5 @@
 // Source: https://medium.com/swlh/write-a-custom-reusable-hook-usefetch-1443d8d4e1e1
-import { useState, useEffect } from "react";
+import { useState, useEffect, useDebugValue } from "react";
 
 const useFetch = url => {
   const [data, setData] = useState(null);
@@ -14,6 +14,8 @@ const useFetch = url => {
         console.error(error);
       });
   }, [url]);
+
+  useDebugValue(data ?? 'Loading data...');
 
   return data;
 };
