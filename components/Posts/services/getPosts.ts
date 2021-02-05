@@ -1,3 +1,4 @@
+import posts from "../../../api/posts.json";
 import { IArticle } from "../../../types";
 
 const getPosts = callback => {
@@ -6,8 +7,8 @@ const getPosts = callback => {
   )
     .then(response => response.json())
     .then((result: IArticle[]) => {
-      console.log(result[0].thumbnail);
-      // callback(result);
+      callback(result);
+      // callback(posts);
     })
     .catch(error => console.error(error));
 };

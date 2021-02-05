@@ -2,14 +2,8 @@ import React, { FC } from "react";
 import { IProps } from "../../../Posts/components/Article/types";
 import formatDate from "./utils/formatDate";
 
-const Article: FC<IProps> = ({
-  id,
-  title,
-  author,
-  thumbnail,
-  date,
-  content
-}) => {
+const Article: FC<IProps> = ({ id, title, author, image, date, content }) => {
+  console.log(id, image);
   return (
     <article id={`post-${id}`}>
       <header>
@@ -20,8 +14,8 @@ const Article: FC<IProps> = ({
         </div>
       </header>
       <figure>
-        <img src={thumbnail.image} />
-        <figcaption>{thumbnail.caption}</figcaption>
+        <img src={image.url} />
+        <figcaption>{image.caption}</figcaption>
       </figure>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </article>

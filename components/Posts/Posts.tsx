@@ -4,17 +4,30 @@ import Article from "../Posts/components/Article/Article";
 import getPosts from "../Posts/services/getPosts";
 
 const Posts = () => {
-  const [posts, setPosts] = useState<IArticle[] | []>([]);
+  const [posts, setPosts] = useState<IArticle[]>([]);
 
   useEffect(() => {
     getPosts(setPosts);
   }, []);
 
+  useEffect(() => {
+    // console.log(posts);
+  }, [posts]);
+
   return (
     <main>
-      {posts?.map(post => (
-        <Article {...post} />
-      ))}
+      {posts.length > 0 &&
+        posts.map(post => (
+          <Article
+            author={post.author}
+            content={post.content}
+            date={post.date}
+            id={post.id}
+            image={post.image}
+            title={post.title}
+            key={post.id}
+          />
+        ))}
     </main>
   );
 };
