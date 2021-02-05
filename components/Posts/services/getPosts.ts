@@ -1,4 +1,3 @@
-import posts from "../../../api/posts.json";
 import { IArticle } from "../../../types";
 
 const getPosts = callback => {
