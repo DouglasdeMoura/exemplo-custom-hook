@@ -10,10 +10,6 @@ const Posts = () => {
     getPosts(setPosts);
   }, []);
 
-  useEffect(() => {
-    console.log(posts);
-  }, [posts]);
-
   return (
     <main>
       {posts.length > 0 &&
