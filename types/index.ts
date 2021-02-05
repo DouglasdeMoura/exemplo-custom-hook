@@ -11,3 +11,7 @@ export interface IArticle {
   date: string;
   content: string;
 }
+
+export interface IPosts {
+  posts: IArticle[];
+}
