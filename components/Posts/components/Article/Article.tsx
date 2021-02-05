@@ -3,7 +3,6 @@ import { IProps } from "../../../Posts/components/Article/types";
 import formatDate from "./utils/formatDate";
 
 const Article: FC<IProps> = ({ id, title, author, image, date, content }) => {
-  console.log(id, image);
   return (
     <article id={`post-${id}`}>
       <header>
